@@ -56,6 +56,11 @@ export type Certification = {
   href?: string;
 };
 
+export type CertificationGroup = {
+  title: string;
+  items: Certification[];
+};
+
 export const portfolioData = {
   name: "Pratyush Mishra",
   roleTarget: "Actively seeking SDE Intern / Backend roles (2026)",
@@ -80,16 +85,15 @@ export const portfolioData = {
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   socialLinks: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/pratyush-mishra-211327296/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/pratyushm206/" },
     { label: "GitHub", href: "https://github.com/pratyushm206" },
     { label: "Email", href: "mailto:pratyushm206@gmail.com" },
   ] satisfies LinkItem[],
   careerSignals: [
     { value: "200+", label: "DSA problems solved", icon: "code" },
     { value: "8.5", label: "CGPA", icon: "graduation" },
-    { value: "2", label: "End-to-End AI Projects", icon: "sparkles" },
-    { value: "Cybersecurity Foundation", label: "Palo Alto Networks", icon: "shield" },
-    { value: "Network Security Fundamentals", label: "Palo Alto Networks", icon: "shield" },
+    { value: "3", label: "End-to-end full-stack & AI projects", icon: "sparkles" },
+    { value: "19", label: "Certifications across cloud, networking & security", icon: "shield" },
   ] satisfies Signal[],
   snapshotCards: [
     {
@@ -133,6 +137,28 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: "NutriTrack",
+      featured: true,
+      previewLabel: "Featured Project",
+      stack: ["React", "Node.js", "Express", "PostgreSQL", "Prisma", "Google Gemini", "JWT Auth"],
+      problem:
+        "Calorie and protein tracking apps usually demand manual food-database searches, which makes daily logging slow enough that most people quit within days.",
+      built: [
+        "Built a full-stack nutrition tracker with a React/Vite frontend and an Express + Prisma + PostgreSQL backend.",
+        "Integrated Google Gemini so users can log a meal via plain text or a photo and get an instant calorie, macro, and health breakdown.",
+        "Implemented JWT + bcrypt authentication with password reset flows, onboarding, and automatic TDEE/protein-target calculation (Mifflin-St Jeor).",
+        "Designed relational data models (User, Profile, FoodLog, ExerciseLog, UserSettings) and a context-aware AI chat assistant that reads live profile and log data to answer 'Am I on track?'.",
+      ],
+      impact: [
+        "Shipped and deployed a working production app end-to-end, not just a local prototype.",
+        "Replaced manual food-database lookup with AI-estimated logging, cutting the steps needed to track a meal.",
+        "Built weekly analytics (streaks, days-on-target, protein averages) to turn raw logs into a feedback loop users can act on.",
+      ],
+      screenshots: [],
+      github: "https://github.com/pratyushm206/NutriTrack",
+      live: "https://nutri-track-sage.vercel.app",
+    },
+    {
       title: "GenAI Tutor",
       featured: true,
       previewLabel: "Featured Project",
@@ -158,7 +184,7 @@ export const portfolioData = {
           alt: "GenAI Tutor progress view with score history and performance analytics",
         },
       ],
-      github: undefined,
+      github: "https://github.com/pratyushm206",
       live: undefined,
     },
     {
@@ -182,7 +208,7 @@ export const portfolioData = {
           alt: "Real-Time Emotion Detection project code and machine learning workflow in the development environment",
         },
       ],
-      github: undefined,
+      github: "https://github.com/pratyushm206",
       live: undefined,
     },
   ] satisfies Project[],
@@ -200,7 +226,7 @@ export const portfolioData = {
     {
       title: "Backend & Databases",
       emphasis: "Server-side and data stack",
-      items: ["Node.js", "Express.js", "MySQL"],
+      items: ["Node.js", "Express.js", "PostgreSQL", "Prisma", "MySQL", "REST APIs", "JWT Auth"],
     },
     {
       title: "Developer Tools",
@@ -208,45 +234,70 @@ export const portfolioData = {
       items: ["Git", "GitHub", "VS Code", "Jupyter Notebook", "Google Colab"],
     },
     {
-      title: "Machine Learning",
-      emphasis: "Applied ML and vision tools",
-      items: ["Supervised & Unsupervised Learning", "OpenCV"],
+      title: "Machine Learning & AI",
+      emphasis: "Applied ML and AI integration",
+      items: ["Supervised & Unsupervised Learning", "OpenCV", "Google Gemini API", "Vector Embeddings"],
     },
     {
-      title: "Cybersecurity",
-      emphasis: "Security concepts",
-      items: ["Network Security", "SQL Injection", "Reconnaissance", "Privilege Escalation"],
-    },
-    {
-      title: "Security Tools",
-      emphasis: "Hands-on security tooling",
-      items: ["Nmap", "Burp Suite", "Metasploit", "Hydra", "SQLMap", "SNORT", "Cutter"],
+      title: "Cloud & Security",
+      emphasis: "Differentiator — CCNA, Red Hat & Palo Alto trained",
+      items: [
+        "Linux Administration (RHEL)",
+        "AWS Cloud Foundations",
+        "Networking (CCNA)",
+        "Network & Cloud Security",
+        "Security Operations Fundamentals",
+      ],
     },
   ] satisfies SkillGroup[],
   achievements: [
     { value: "200+", label: "DSA problems solved" },
     { value: "8.5", label: "Current CGPA" },
-    { value: "2", label: "End-to-end AI projects" },
+    { value: "3", label: "End-to-end full-stack & AI projects" },
     { value: "HackerRank", label: "Problem solving certification" },
     { value: "LeetCode", label: "100 Days Badge" },
   ] satisfies Achievement[],
-  certifications: [
+  certificationGroups: [
     {
-      title: "Cybersecurity Foundation",
-      issuer: "Palo Alto Networks",
-      href: undefined,
+      title: "Cloud & Systems",
+      items: [
+        { title: "AWS Academy Graduate – Cloud Foundations", issuer: "AWS Academy" },
+        { title: "Red Hat System Administration I (RH124)", issuer: "Red Hat" },
+        { title: "Red Hat System Administration II (RH134)", issuer: "Red Hat" },
+        { title: "Getting Started with Linux Fundamentals (RH104)", issuer: "Red Hat" },
+      ] as Certification[],
     },
     {
-      title: "Network Security Fundamentals",
-      issuer: "Palo Alto Networks",
-      href: undefined,
+      title: "Networking",
+      items: [
+        { title: "CCNA: Introduction to Networks", issuer: "Cisco Networking Academy" },
+        { title: "CCNA: Switching, Routing, and Wireless Essentials", issuer: "Cisco Networking Academy" },
+        { title: "CCNA: Enterprise Networking, Security, and Automation", issuer: "Cisco Networking Academy" },
+      ] as Certification[],
     },
     {
-      title: "Cybersecurity Academy Orientation",
-      issuer: "Palo Alto Networks",
-      href: undefined,
+      title: "Security",
+      items: [
+        { title: "Cybersecurity Foundation", issuer: "Palo Alto Networks" },
+        { title: "Network Security Fundamentals", issuer: "Palo Alto Networks" },
+        { title: "Cloud Security Fundamentals", issuer: "Palo Alto Networks" },
+        { title: "Security Operations Fundamentals", issuer: "Palo Alto Networks" },
+        { title: "Cybersecurity Academy Orientation", issuer: "Palo Alto Networks" },
+        { title: "Introduction to Cybersecurity", issuer: "Cisco Networking Academy" },
+      ] as Certification[],
     },
-  ] satisfies Certification[],
+    {
+      title: "Data, AI & Programming",
+      items: [
+        { title: "Introduction to Modern AI", issuer: "Cisco Networking Academy" },
+        { title: "Apply AI: Analyze Customer Reviews", issuer: "Cisco Networking Academy" },
+        { title: "Introduction to Data Science", issuer: "Cisco Networking Academy" },
+        { title: "Data Analytics Essentials", issuer: "Cisco Networking Academy" },
+        { title: "Python Essentials 1", issuer: "Cisco Networking Academy" },
+        { title: "Python Essentials 2", issuer: "Cisco Networking Academy" },
+      ] as Certification[],
+    },
+  ] satisfies CertificationGroup[],
   contactHeading: "Open to internships, collaborations, and SDE roles.",
   contactCopy:
     "If you are hiring for backend, SDE intern, or strong problem-solving roles, I would be glad to connect and share more about my projects and preparation.",

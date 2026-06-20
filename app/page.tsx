@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/contact-form";
 import {
   CodeIcon,
   DownloadIcon,
+  ExternalLinkIcon,
   GitHubIcon,
   GraduationIcon,
   LinkedInIcon,
@@ -207,7 +208,7 @@ export default function HomePage() {
                               <span />
                             </div>
                             <div className="preview-window-body">
-                              <p className="preview-window-label">Project Snapshot</p>
+                              <p className="preview-window-label">{project.previewLabel}</p>
                               <h4>{project.title}</h4>
                               <div className="preview-chip-row">
                                 {project.stack.slice(0, 3).map((item) => (
@@ -274,6 +275,12 @@ export default function HomePage() {
                           <GitHubIcon className="icon-sm" />
                           GitHub Repo
                         </Link>
+                        {project.live ? (
+                          <Link href={project.live} target="_blank" className="soft-link">
+                            <ExternalLinkIcon className="icon-sm" />
+                            Live Demo
+                          </Link>
+                        ) : null}
                       </div>
                     </div>
                   </article>
@@ -337,24 +344,35 @@ export default function HomePage() {
           <SectionReveal>
             <section id="certifications" className="resume-card projects-card section-block">
               <p className="section-label">Certifications</p>
-              <h2 className="feature-title">Security learning and technical foundations</h2>
+              <h2 className="feature-title">Cloud, networking, security & data foundations</h2>
+              <p className="feature-copy cert-section-intro">
+                19 completed certifications across Cisco Networking Academy, Red Hat, AWS Academy, and Palo Alto
+                Networks — the differentiator behind the backend + DSA core.
+              </p>
 
-              <div className="cert-grid">
-                {portfolioData.certifications.map((cert) => (
-                  <article key={cert.title} className="inner-soft-card cert-card">
-                    <div className="cert-icon-wrap">
-                      <ShieldIcon className="icon-sm cert-icon" />
+              <div className="cert-group-list">
+                {portfolioData.certificationGroups.map((group) => (
+                  <div key={group.title} className="cert-group">
+                    <p className="toolkit-label cert-group-title">{group.title}</p>
+                    <div className="cert-grid">
+                      {group.items.map((cert) => (
+                        <article key={cert.title} className="inner-soft-card cert-card">
+                          <div className="cert-icon-wrap">
+                            <ShieldIcon className="icon-sm cert-icon" />
+                          </div>
+                          <div className="cert-content">
+                            <h3 className="cert-title">{cert.title}</h3>
+                            <p className="cert-issuer">{cert.issuer}</p>
+                            {cert.href ? (
+                              <Link href={cert.href} target="_blank" className="cert-link">
+                                View Certificate
+                              </Link>
+                            ) : null}
+                          </div>
+                        </article>
+                      ))}
                     </div>
-                    <div className="cert-content">
-                      <h3 className="cert-title">{cert.title}</h3>
-                      <p className="cert-issuer">{cert.issuer}</p>
-                      {cert.href ? (
-                        <Link href={cert.href} target="_blank" className="cert-link">
-                          View Certificate
-                        </Link>
-                      ) : null}
-                    </div>
-                  </article>
+                  </div>
                 ))}
               </div>
             </section>
