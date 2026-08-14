@@ -1,85 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #4a5355;
-  --ink-soft: #727c7d;
-  --line: rgba(94, 104, 105, 0.12);
-  --card: rgba(249, 246, 240, 0.94);
-  --accent: #5e9fa4;
-  --shadow: 0 30px 70px rgba(133, 114, 82, 0.16);
-  --focus: rgba(120, 194, 201, 0.9);
-  --body-overlay:
-    radial-gradient(circle at top left, rgba(175, 196, 196, 0.5), transparent 22%),
-    radial-gradient(circle at top right, rgba(227, 196, 147, 0.42), transparent 24%),
-    linear-gradient(180deg, rgba(248, 244, 236, 0.95), rgba(234, 225, 212, 0.98)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.18) 0,
-      rgba(255, 255, 255, 0.18) 28px,
-      rgba(226, 215, 196, 0.18) 28px,
-      rgba(226, 215, 196, 0.18) 56px
-    );
-  --glow-left: rgba(160, 186, 187, 0.58);
-  --glow-right: rgba(220, 192, 144, 0.5);
-  --topbar-link-color: rgba(76, 86, 88, 0.9);
-  --topbar-link-hover: #2f383a;
-  --topbar-button-bg: rgba(246, 242, 235, 0.66);
-  --topbar-button-border: rgba(80, 88, 90, 0.12);
-  --topbar-button-text: #30393b;
-  --topbar-button-shadow: 0 10px 24px rgba(139, 120, 89, 0.08);
-  --signal-bg: linear-gradient(180deg, rgba(236, 239, 238, 0.8), rgba(232, 236, 235, 0.62));
-  --inner-card: rgba(245, 243, 239, 0.76);
-  --project-card: rgba(247, 244, 239, 0.82);
-  --chip-bg: rgba(255, 255, 255, 0.38);
-  --chip-hover: rgba(255, 255, 255, 0.74);
-  --input-bg: rgba(255, 255, 255, 0.72);
-  --button-bg: #3f4b4e;
-  --button-bg-hover: #344043;
-  --button-text: #f7f1e9;
-  --button-shadow: 0 12px 24px rgba(80, 91, 92, 0.15);
-  --card-border: rgba(111, 117, 118, 0.08);
-  --soft-stroke: rgba(255, 255, 255, 0.7);
+  --ink: #e9efed;
+  --ink-soft: #94a3a0;
+  --line: #1e2827;
+  --card: #131a19;
+  --accent: #4fe6b8;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --focus: rgba(79, 230, 184, 0.9);
+  --body-overlay: #0a0e0e;
+  --glow-left: rgba(79, 230, 184, 0.14);
+  --glow-right: rgba(232, 163, 61, 0.1);
+  --topbar-link-color: #94a3a0;
+  --topbar-link-hover: #e9efed;
+  --topbar-button-bg: rgba(19, 26, 25, 0.85);
+  --topbar-button-border: #1e2827;
+  --topbar-button-text: #e9efed;
+  --topbar-button-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  --signal-bg: #131a19;
+  --inner-card: #131a19;
+  --project-card: #131a19;
+  --chip-bg: #0d1312;
+  --chip-hover: #182120;
+  --input-bg: #0d1312;
+  --button-bg: #4fe6b8;
+  --button-bg-hover: #6cf0c8;
+  --button-text: #04140f;
+  --button-shadow: 0 12px 24px rgba(79, 230, 184, 0.18);
+  --card-border: #1e2827;
+  --soft-stroke: rgba(255, 255, 255, 0.02);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
 }
 
 html[data-theme="dark"] {
-  --ink: #edf3f5;
-  --ink-soft: #9fb0b8;
-  --line: rgba(188, 211, 219, 0.12);
-  --card: rgba(13, 20, 28, 0.9);
-  --accent: #81c8cf;
-  --shadow: 0 28px 70px rgba(2, 6, 10, 0.42);
-  --focus: rgba(129, 200, 207, 0.92);
-  --body-overlay:
-    radial-gradient(circle at top left, rgba(57, 101, 112, 0.36), transparent 22%),
-    radial-gradient(circle at top right, rgba(158, 118, 68, 0.24), transparent 24%),
-    linear-gradient(180deg, #08111a, #0b151f 52%, #0f1722 100%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.03) 0,
-      rgba(255, 255, 255, 0.03) 28px,
-      rgba(148, 116, 74, 0.03) 28px,
-      rgba(148, 116, 74, 0.03) 56px
-    );
-  --glow-left: rgba(67, 118, 128, 0.45);
-  --glow-right: rgba(160, 120, 76, 0.3);
-  --topbar-link-color: rgba(222, 234, 237, 0.84);
-  --topbar-link-hover: #ffffff;
-  --topbar-button-bg: rgba(255, 255, 255, 0.04);
-  --topbar-button-border: rgba(221, 233, 238, 0.12);
-  --topbar-button-text: #edf3f5;
-  --topbar-button-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
-  --signal-bg: linear-gradient(180deg, rgba(18, 28, 37, 0.88), rgba(14, 23, 32, 0.82));
-  --inner-card: rgba(255, 255, 255, 0.035);
-  --project-card: rgba(255, 255, 255, 0.03);
-  --chip-bg: rgba(255, 255, 255, 0.04);
-  --chip-hover: rgba(255, 255, 255, 0.08);
-  --input-bg: rgba(255, 255, 255, 0.04);
-  --button-bg: #7ebbc2;
-  --button-bg-hover: #94ccd2;
-  --button-text: #091219;
-  --button-shadow: 0 14px 32px rgba(44, 124, 136, 0.18);
-  --card-border: rgba(188, 211, 219, 0.08);
-  --soft-stroke: rgba(255, 255, 255, 0.08);
+  --ink: #e9efed;
+  --ink-soft: #94a3a0;
+  --line: #1e2827;
+  --card: #131a19;
+  --accent: #4fe6b8;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --focus: rgba(79, 230, 184, 0.9);
+  --body-overlay: #0a0e0e;
+  --glow-left: rgba(79, 230, 184, 0.14);
+  --glow-right: rgba(232, 163, 61, 0.1);
+  --topbar-link-color: #94a3a0;
+  --topbar-link-hover: #e9efed;
+  --topbar-button-bg: rgba(19, 26, 25, 0.85);
+  --topbar-button-border: #1e2827;
+  --topbar-button-text: #e9efed;
+  --topbar-button-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+  --signal-bg: #131a19;
+  --inner-card: #131a19;
+  --project-card: #131a19;
+  --chip-bg: #0d1312;
+  --chip-hover: #182120;
+  --input-bg: #0d1312;
+  --button-bg: #4fe6b8;
+  --button-bg-hover: #6cf0c8;
+  --button-text: #04140f;
+  --button-shadow: 0 12px 24px rgba(79, 230, 184, 0.18);
+  --card-border: #1e2827;
+  --soft-stroke: rgba(255, 255, 255, 0.02);
+}
+
+html[data-theme="light"] {
+  --ink: #1b2423;
+  --ink-soft: #57635f;
+  --line: rgba(30, 40, 39, 0.14);
+  --card: #f4f2ec;
+  --accent: #1f9c72;
+  --shadow: 0 24px 60px rgba(20, 30, 28, 0.1);
+  --focus: rgba(31, 156, 114, 0.55);
+  --body-overlay: #f7f5ef;
+  --glow-left: rgba(31, 156, 114, 0.12);
+  --glow-right: rgba(200, 140, 40, 0.1);
+  --topbar-link-color: #57635f;
+  --topbar-link-hover: #1b2423;
+  --topbar-button-bg: rgba(255, 255, 255, 0.7);
+  --topbar-button-border: rgba(30, 40, 39, 0.12);
+  --topbar-button-text: #1b2423;
+  --topbar-button-shadow: 0 10px 24px rgba(20, 30, 28, 0.08);
+  --signal-bg: #ffffff;
+  --inner-card: #ffffff;
+  --project-card: #ffffff;
+  --chip-bg: rgba(255, 255, 255, 0.6);
+  --chip-hover: #ffffff;
+  --input-bg: #ffffff;
+  --button-bg: #1f9c72;
+  --button-bg-hover: #279d7c;
+  --button-text: #f7f5ef;
+  --button-shadow: 0 12px 24px rgba(31, 156, 114, 0.16);
+  --card-border: rgba(30, 40, 39, 0.1);
+  --soft-stroke: rgba(255, 255, 255, 0.5);
 }
 
 * {
@@ -96,6 +109,21 @@ body {
   background: var(--body-overlay);
   color: var(--ink);
   font-family: Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 10%, transparent 70%);
 }
 
 a,
@@ -207,9 +235,9 @@ textarea:focus-visible {
 .sticky-navbar-inner {
   padding: 0.85rem 1rem;
   border: 1px solid var(--card-border);
-  border-radius: 1.4rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
+  border-radius: 12px;
+  background: rgba(10, 14, 14, 0.85);
+  backdrop-filter: blur(10px);
 }
 
 .sticky-link {
@@ -234,14 +262,10 @@ textarea:focus-visible {
 
 .resume-card {
   border: 1px solid var(--card-border);
-  border-radius: 2rem;
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 24%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)),
-    var(--card);
+  border-radius: 14px;
+  background: var(--card);
   color: var(--ink);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
 }
 
 .hero-card,
@@ -279,15 +303,28 @@ textarea:focus-visible {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section-label::before {
+  content: "//";
+  color: var(--ink-soft);
+  opacity: 0.6;
 }
 
 .hero-name {
   margin: 1rem 0 0;
-  font-size: clamp(3.7rem, 9vw, 7rem);
-  line-height: 0.93;
-  letter-spacing: -0.06em;
-  font-weight: 700;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  font-family: var(--font-display);
 }
 
 .hero-role {
@@ -396,7 +433,7 @@ textarea:focus-visible {
 .signal-panel {
   height: 100%;
   border: 1px solid var(--line);
-  border-radius: 1.75rem;
+  border-radius: 12px;
   background: var(--signal-bg);
   padding: 1.5rem;
 }
@@ -413,7 +450,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 1rem;
   border: 1px solid var(--line);
-  border-radius: 1.4rem;
+  border-radius: 10px;
   background: var(--chip-bg);
   padding: 1rem;
   box-shadow: inset 0 1px 0 var(--soft-stroke);
@@ -435,7 +472,7 @@ textarea:focus-visible {
   width: 3rem;
   height: 3rem;
   border-radius: 1rem;
-  background: rgba(94, 159, 164, 0.16);
+  background: rgba(79, 230, 184, 0.16);
   color: var(--accent);
 }
 
@@ -470,9 +507,11 @@ textarea:focus-visible {
 .mini-card-title,
 .feature-title {
   margin: 0.85rem 0 0;
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 .mini-card-copy,
@@ -487,7 +526,7 @@ textarea:focus-visible {
   margin-top: 1.8rem;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
 }
 
 .bullet-list {
@@ -505,9 +544,9 @@ textarea:focus-visible {
 .project-card,
 .cert-card {
   border: 1px solid var(--line);
-  border-radius: 1.55rem;
+  border-radius: 10px;
   background: var(--inner-card);
-  box-shadow: inset 0 1px 0 var(--soft-stroke);
+  box-shadow: none;
 }
 
 .strength-stack,
@@ -578,23 +617,20 @@ textarea:focus-visible {
 
 .project-preview {
   border: 1px solid var(--line);
-  border-radius: 1.45rem;
-  background:
-    linear-gradient(140deg, rgba(94, 159, 164, 0.12), rgba(255, 255, 255, 0.02)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+  border-radius: 10px;
+  background: var(--chip-bg);
   padding: 1rem;
 }
 
 .project-preview-featured {
-  background:
-    radial-gradient(circle at top left, rgba(94, 159, 164, 0.18), transparent 38%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+  background: var(--chip-bg);
 }
 
 .project-image-grid {
   display: grid;
-  gap: 0.9rem;
+  gap: 2px;
   margin-top: 0.85rem;
+  background: var(--line);
 }
 
 .project-image-grid-featured {
@@ -603,9 +639,9 @@ textarea:focus-visible {
 
 .project-image-frame {
   overflow: hidden;
-  border-radius: 1.15rem;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  border: none;
+  background: var(--chip-bg);
 }
 
 .project-image {
@@ -621,7 +657,7 @@ textarea:focus-visible {
 
 .preview-window {
   margin-top: 0.85rem;
-  border-radius: 1.1rem;
+  border-radius: 10px;
   border: 1px solid var(--line);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.18);
@@ -638,7 +674,7 @@ textarea:focus-visible {
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 999px;
-  background: rgba(94, 159, 164, 0.34);
+  background: rgba(79, 230, 184, 0.34);
 }
 
 .preview-window-body {
@@ -667,7 +703,7 @@ textarea:focus-visible {
 .preview-grid-side span {
   border-radius: 1rem;
   background:
-    linear-gradient(180deg, rgba(94, 159, 164, 0.18), rgba(255, 255, 255, 0.06));
+    linear-gradient(180deg, rgba(79, 230, 184, 0.18), rgba(255, 255, 255, 0.06));
   border: 1px solid var(--line);
 }
 
@@ -702,18 +738,22 @@ textarea:focus-visible {
 
 .project-heading h3 {
   margin: 0;
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 .stack-badge {
-  padding: 0.42rem 0.78rem;
-  font-size: 0.82rem;
+  padding: 0.32rem 0.62rem;
+  font-size: 0.74rem;
+  font-family: var(--font-mono);
+  border-radius: 5px;
 }
 
 .stack-badge-strong {
-  background: rgba(94, 159, 164, 0.18);
+  background: rgba(79, 230, 184, 0.18);
   font-weight: 600;
 }
 
@@ -773,7 +813,7 @@ textarea:focus-visible {
 .input-field {
   width: 100%;
   border: 1px solid rgba(57, 70, 78, 0.14);
-  border-radius: 1.2rem;
+  border-radius: 10px;
   background: var(--input-bg);
   padding: 0.95rem 1rem;
   color: var(--ink);
@@ -830,7 +870,7 @@ textarea:focus-visible {
   width: 2.7rem;
   height: 2.7rem;
   border-radius: 1rem;
-  background: rgba(94, 159, 164, 0.16);
+  background: rgba(79, 230, 184, 0.16);
   color: var(--accent);
 }
 

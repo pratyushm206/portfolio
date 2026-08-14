@@ -24,11 +24,11 @@ function subscribe(callback: () => void) {
 
 function getClientSnapshot(): Theme {
   const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === "dark" || stored === "light" ? stored : "light";
+  return stored === "dark" || stored === "light" ? stored : "dark";
 }
 
 function getServerSnapshot(): Theme {
-  return "light";
+  return "dark";
 }
 
 export function ThemeToggle() {
