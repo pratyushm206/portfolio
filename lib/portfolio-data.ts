@@ -63,11 +63,11 @@ export type CertificationGroup = {
 
 export const portfolioData = {
   name: "Pratyush Mishra",
-  roleTarget: "Actively seeking SDE Intern / Backend roles (2026)",
-  role: "Backend-focused developer building scalable systems with strong DSA",
+  roleTarget: "Actively seeking SDE / Full-Stack / AI-ML / Cybersecurity roles (2026)",
+  role: "Full-stack developer building AI-integrated systems, backed by a real cybersecurity foundation",
   positioning:
-    "I combine strong DSA discipline with a systems mindset to build dependable software and AI-backed products.",
-  valueProp: "Problem solving, clean implementation, and real project execution over generic claims.",
+    "I combine backend engineering, applied AI, and a certified security foundation (CCNA, Palo Alto Networks, Red Hat) to build systems that are functional, scalable, and defensible.",
+  valueProp: "Problem solving, clean implementation, and real project execution — plus hands-on security fundamentals most developers skip.",
   location: "Greater Noida, Uttar Pradesh",
   email: "pratyushm206@gmail.com",
   phone: "+91 95653 08767",
@@ -90,9 +90,9 @@ export const portfolioData = {
     { label: "Email", href: "mailto:pratyushm206@gmail.com" },
   ] satisfies LinkItem[],
   careerSignals: [
-    { value: "200+", label: "DSA problems solved", icon: "code" },
+    { value: "300+", label: "DSA problems solved", icon: "code" },
     { value: "8.5", label: "CGPA", icon: "graduation" },
-    { value: "3", label: "End-to-end full-stack & AI projects", icon: "sparkles" },
+    { value: "3", label: "Major full-stack & AI products shipped", icon: "sparkles" },
     { value: "19", label: "Certifications across cloud, networking & security", icon: "shield" },
   ] satisfies Signal[],
   snapshotCards: [
@@ -104,18 +104,19 @@ export const portfolioData = {
     },
     {
       eyebrow: "Focus",
-      title: "Backend + DSA Preparation",
-      subtitle: "Building interview-ready fundamentals through disciplined coding practice and project work.",
+      title: "Full-Stack + AI + Security",
+      subtitle: "Building interview-ready fundamentals through disciplined coding practice, shipped AI products, and certified security training.",
     },
     {
       eyebrow: "Current Priority",
-      title: "SDE Intern / Backend Roles",
-      subtitle: "Preparing for coding rounds, backend implementation tasks, and system-oriented interviews.",
+      title: "SDE / Full-Stack / AI-ML / Cybersecurity Roles",
+      subtitle: "Preparing for coding rounds, backend implementation tasks, system-design interviews, and security-fundamentals screening.",
     },
   ] satisfies SnapshotCard[],
   overviewPoints: [
     "Strong focus on data structures, algorithms, and implementation clarity.",
-    "Backend-oriented mindset with interest in scalable systems and clean application logic.",
+    "Backend-oriented mindset with interest in scalable systems, clean application logic, and secure-by-default auth flows.",
+    "Real cybersecurity grounding — CCNA, Palo Alto Networks, and Red Hat trained — not just a checkbox certification list.",
     "Consistent project-building approach tied directly to internship and placement preparation.",
   ],
   strengths: [
@@ -127,7 +128,12 @@ export const portfolioData = {
     {
       title: "Systems-oriented execution",
       description:
-        "I enjoy breaking problems into flows, data movement, and implementation details instead of only surface-level UI work.",
+        "I enjoy breaking problems into flows, data movement, and implementation details — auth that can't be tricked, rate limiters that keep an LLM bill sane — instead of only surface-level UI work.",
+    },
+    {
+      title: "Security-literate by training",
+      description:
+        "Certified across networking (CCNA), cybersecurity and cloud security (Palo Alto Networks), and Linux administration (Red Hat) — I understand the infrastructure my code runs on, not just the code itself.",
     },
     {
       title: "Consistency under pressure",
@@ -137,6 +143,32 @@ export const portfolioData = {
   ],
   projects: [
     {
+      title: "PrepSense",
+      featured: true,
+      previewLabel: "Featured Project",
+      stack: ["Node.js", "Express", "MongoDB", "Mongoose", "JWT", "Gemini API", "Rate Limiting"],
+      problem:
+        "Generic question banks don't feel like a real interview round, and they don't tell you whether you're actually ready for a specific company and role.",
+      built: [
+        "Architected a Node.js/Express REST API on MongoDB/Mongoose with IDOR-protected session ownership checks, JWT + bcrypt authentication, and role-based admin middleware with live-DB privilege checks for instant revocation.",
+        "Built an AI question-generation and answer-evaluation pipeline on the Gemini API, backed by a TTL response cache and two independent retry layers — one for API failures, one for validation failures — to absorb unreliable LLM output.",
+        "Designed a difficulty-weighted scoring engine with topic-wise and session-wise aggregation and trend detection, and applied per-route rate limiting to keep AI API cost under control.",
+      ],
+      impact: [
+        "Turns a static question bank into a company-specific, freshly generated interview round with real scoring.",
+        "Tracks a readiness score over time and flags weak topics (e.g. arrays, system design) before the next real screening round.",
+        "Session-security hardened — ownership and role checks prevent one user from ever touching another's data.",
+      ],
+      screenshots: [
+        { src: "/prepsense-dashboard.png", alt: "PrepSense readiness dashboard with weak and strong topic breakdown" },
+        { src: "/prepsense-practice.png", alt: "PrepSense new interview round generator by company and role" },
+        { src: "/prepsense-history.png", alt: "PrepSense practice log and session history" },
+        { src: "/prepsense-recommendations.png", alt: "PrepSense weak-topic study recommendations" },
+      ],
+      github: "https://github.com/pratyushm206/PrepSense",
+      live: undefined,
+    },
+    {
       title: "NutriTrack",
       featured: true,
       previewLabel: "Featured Project",
@@ -145,23 +177,56 @@ export const portfolioData = {
         "Calorie and protein tracking apps usually demand manual food-database searches, which makes daily logging slow enough that most people quit within days.",
       built: [
         "Built a full-stack nutrition tracker with a React/Vite frontend and an Express + Prisma + PostgreSQL backend.",
-        "Integrated Google Gemini so users can log a meal via plain text or a photo and get an instant calorie, macro, and health breakdown.",
+        "Integrated Google Gemini so users can log a meal or workout via plain text or a photo and get an instant calorie, macro, and health breakdown.",
         "Implemented JWT + bcrypt authentication with password reset flows, onboarding, and automatic TDEE/protein-target calculation (Mifflin-St Jeor).",
-        "Designed relational data models (User, Profile, FoodLog, ExerciseLog, UserSettings) and a context-aware AI chat assistant that reads live profile and log data to answer 'Am I on track?'.",
+        "Designed relational data models (User, Profile, FoodLog, ExerciseLog, UserSettings) and a context-aware AI chat assistant (NutriAI) that reads live profile and log data to answer 'what should I eat next?' in real time.",
       ],
       impact: [
         "Shipped and deployed a working production app end-to-end, not just a local prototype.",
-        "Replaced manual food-database lookup with AI-estimated logging, cutting the steps needed to track a meal.",
+        "Replaced manual food-database lookup with AI-estimated logging, cutting the steps needed to track a meal or workout.",
         "Built weekly analytics (streaks, days-on-target, protein averages) to turn raw logs into a feedback loop users can act on.",
       ],
-      screenshots: [],
+      screenshots: [
+        { src: "/nutritrack-dashboard.png", alt: "NutriTrack daily summary dashboard with calories, protein, and macros" },
+        { src: "/nutritrack-foodlog.png", alt: "NutriTrack AI food logging with nutrition breakdown" },
+        { src: "/nutritrack-exerciselog.png", alt: "NutriTrack AI exercise burn estimate" },
+        { src: "/nutritrack-ai.png", alt: "NutriAI in-app nutrition coach chat with full daily context" },
+        { src: "/nutritrack-profile.png", alt: "NutriTrack nutrition profile, BMI, and macro split target" },
+      ],
       github: "https://github.com/pratyushm206/NutriTrack",
       live: "https://nutri-track-sage.vercel.app",
     },
     {
-      title: "GenAI Tutor",
+      title: "AI Resume Analyzer",
       featured: true,
       previewLabel: "Featured Project",
+      stack: ["Streamlit", "Sentence Transformers", "Google Gemini", "ReportLab", "Python"],
+      problem:
+        "Candidates rarely know how their resume actually scores against a real ATS — most feedback is generic, and it doesn't map to the exact job description in front of them.",
+      built: [
+        "Built with Sentence Transformers for semantic skill matching and the Google Gemini API for recruiter-style verdicts, suggestions, cover letters, and resume tailoring.",
+        "Section-level ATS scoring (summary, education, projects, skills, certifications) rather than a single opaque number.",
+        "One-click PDF report export via ReportLab, AI cover-letter generation, and a resume-tailoring engine that rewrites the resume against the pasted job description.",
+        "Full UI/UX redesign — warm graphite dark theme with a brass/gold accent — built and committed solo, straight to main.",
+      ],
+      impact: [
+        "Returns an ATS match score, a matching-vs-missing skills diff, and a blunt recruiter verdict in seconds.",
+        "Generates a tailored cover letter and a JD-rewritten resume on demand — turns raw feedback into an actionable next draft.",
+      ],
+      screenshots: [
+        { src: "/ara-upload.png", alt: "AI Resume Analyzer upload and job description input screen" },
+        { src: "/ara-score.png", alt: "AI Resume Analyzer ATS match score and section breakdown" },
+        { src: "/ara-skills.png", alt: "AI Resume Analyzer matching vs missing skills diff" },
+        { src: "/ara-verdict.png", alt: "AI Resume Analyzer suggestions and recruiter verdict" },
+        { src: "/ara-coverletter.png", alt: "AI Resume Analyzer AI-generated cover letter" },
+      ],
+      github: "https://github.com/pratyushm206/AI-Resume-Analyzer",
+      live: undefined,
+    },
+    {
+      title: "GenAI Tutor",
+      featured: false,
+      previewLabel: "Project Snapshot",
       stack: ["Python", "Google Gemini", "Vector Embeddings", "Semantic Search"],
       problem:
         "Students often struggle to extract useful answers quickly from long study material and static notes.",
@@ -221,12 +286,12 @@ export const portfolioData = {
     {
       title: "Core Computer Science",
       emphasis: "Interview-relevant foundations",
-      items: ["Data Structures & Algorithms", "OOP", "DBMS"],
+      items: ["Data Structures & Algorithms", "OOP", "DBMS", "Computer Networks"],
     },
     {
       title: "Backend & Databases",
       emphasis: "Server-side and data stack",
-      items: ["Node.js", "Express.js", "PostgreSQL", "Prisma", "MySQL", "REST APIs", "JWT Auth"],
+      items: ["Node.js", "Express.js", "PostgreSQL", "MongoDB", "Prisma", "Mongoose", "MySQL", "REST APIs", "JWT Auth"],
     },
     {
       title: "Developer Tools",
@@ -236,24 +301,35 @@ export const portfolioData = {
     {
       title: "Machine Learning & AI",
       emphasis: "Applied ML and AI integration",
-      items: ["Supervised & Unsupervised Learning", "OpenCV", "Google Gemini API", "Vector Embeddings"],
+      items: ["Supervised & Unsupervised Learning", "OpenCV", "Google Gemini API", "Vector Embeddings", "Prompt Engineering"],
     },
     {
-      title: "Cloud & Security",
+      title: "Cloud & Systems",
+      emphasis: "Infrastructure the code actually runs on",
+      items: ["Linux Administration (Red Hat)", "AWS Cloud Foundations", "Networking (CCNA)"],
+    },
+    {
+      title: "Cybersecurity",
       emphasis: "Differentiator — CCNA, Red Hat & Palo Alto trained",
       items: [
-        "Linux Administration (RHEL)",
-        "AWS Cloud Foundations",
-        "Networking (CCNA)",
         "Network & Cloud Security",
-        "Security Operations Fundamentals",
+        "VAPT Fundamentals",
+        "OWASP Top 10",
+        "Incident Response Lifecycle",
+        "Malware & Phishing Analysis",
       ],
+    },
+    {
+      title: "Security Operations & Tooling",
+      emphasis: "Hands-on with real SOC tools, not just theory",
+      items: ["SIEM Fundamentals", "Log Analysis", "Alert Triage", "EDR/XDR Fundamentals", "Burp Suite", "Wireshark", "Nmap", "Metasploit (basic)"],
     },
   ] satisfies SkillGroup[],
   achievements: [
-    { value: "200+", label: "DSA problems solved" },
+    { value: "300+", label: "DSA problems solved" },
     { value: "8.5", label: "Current CGPA" },
-    { value: "3", label: "End-to-end full-stack & AI projects" },
+    { value: "3", label: "End-to-end full-stack & AI products shipped" },
+    { value: "SIH", label: "Selected — Smart India Hackathon (SIH) screening" },
     { value: "HackerRank", label: "Problem solving certification" },
     { value: "LeetCode", label: "100 Days Badge" },
   ] satisfies Achievement[],
@@ -298,7 +374,7 @@ export const portfolioData = {
       ] as Certification[],
     },
   ] satisfies CertificationGroup[],
-  contactHeading: "Open to internships, collaborations, and SDE roles.",
+  contactHeading: "Open to SDE, Full-Stack, AI/ML, and Cybersecurity roles.",
   contactCopy:
-    "If you are hiring for backend, SDE intern, or strong problem-solving roles, I would be glad to connect and share more about my projects and preparation.",
+    "If you are hiring for backend, full-stack, AI/ML, or cybersecurity-adjacent roles, I would be glad to connect and share more about my projects, my security training, and my preparation.",
 };
